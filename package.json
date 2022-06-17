@@ -1,0 +1,72 @@
+{
+  "name": "4",
+  "version": "1.0.0",
+  "description": "Blog",
+  "engines": {
+    "node": "16.13.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand --forceExit",
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "cypress:open": "cypress open",
+    "start": "react-scripts start ",
+    "start-prod": "node index.js NODE_ENV=production",
+    "build": "react-scripts build",
+    "back":"node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "@testing-library/user-event": "^12.6.3",
+    "axios": "^0.21.1",
+    "babel-jest": "^26.6.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.7",
+    "nodemon": "^2.0.15",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.8",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "4.0.1",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "web-vitals": "^0.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "cross-env": "^7.0.3",
+    "jest": "^27.5.1",
+    "jest-watch-typeahead": "^0.6.5",
+    "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
