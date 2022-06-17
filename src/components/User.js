@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'

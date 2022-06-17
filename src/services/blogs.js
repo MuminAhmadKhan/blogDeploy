@@ -73,4 +73,5 @@ async function comment(commentUrl = `/api/blogs/comment`, data = {}) {
 
 
 
-export default { getAll  , setHeader , save , like , delete_,comment}
+// eslint-disable-next-line import/no-anonymous-default-export
+export default  { getAll  , setHeader , save , like , delete_,comment}
