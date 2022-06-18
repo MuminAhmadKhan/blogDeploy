@@ -1,4 +1,4 @@
-import { PORT } from "../../utils/config";
+const PORT = 3001 || process.env.PORT
 
 
 async function login(loginUrl = `/api/login`, data = {}) {

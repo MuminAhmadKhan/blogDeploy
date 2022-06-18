@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { PORT } from '../../utils/config'
-const baseUrl = '/api/blogs'
 
+const baseUrl = '/api/blogs'
+const PORT = 3001 || process.env.PORT
 const getAll = async() => {
   const request = await axios.get(baseUrl)
   return request.data
