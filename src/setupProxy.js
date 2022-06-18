@@ -1,5 +1,5 @@
 const proxy = require("http-proxy-middleware");
 
 module.exports = app => {
-  app.use(proxy.createProxyMiddleware("/api/*", { target: "https://blogstore.herokuapp.com" }));
+  app.use(proxy.createProxyMiddleware("/api/*", { target: "http://localhost:3001" }));
 };
