@@ -45,20 +45,18 @@
       "react-app/jest"
     ]
   },
-
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "cross-env": "^7.0.3",
+    "cypress": "^10.0.3",
     "jest": "^26.6.0",
     "jest-watch-typeahead": "^0.6.5",
-    "supertest": "^6.2.2",
-    "cypress": "^10.0.3"
+    "supertest": "^6.2.2"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
