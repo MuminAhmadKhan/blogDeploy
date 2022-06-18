@@ -11,7 +11,6 @@ const  middleware = require('./utils/middelware')
 const loginRouter = require('./controllers/login')
 
 mongoose.connect(MONGODB_URI)
-if (process.env.NODE_ENV==='production')
 app.use(express.static('build')) 
 app.use(middleware.tokenExtractor)
 
