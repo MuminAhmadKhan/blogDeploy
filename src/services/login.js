@@ -1,13 +1,9 @@
+import { PORT } from "../../utils/config";
 
 
 async function login(loginUrl = `/api/login`, data = {}) {
-  let    localhost='blogstore.herokuapp.com'
-
-  if(process.env.NODE_ENV==='production'){
-    console.log("ji")
-    localhost='blogstore.herokuapp.com'
-  }    
-    const response = await fetch( `http://${localhost}:3001${loginUrl}` , {
+  
+    const response = await fetch( `http://localhost:${PORT}${loginUrl}` , {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
    
       headers: {
