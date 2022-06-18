@@ -11,7 +11,7 @@
     "start:test": "cross-env NODE_ENV=test node index.js",
     "cypress:open": "cypress run",
     "start": "react-scripts start ",
-    "start-prod": "node index.js NODE_ENV=production",
+    "start-prod": "npm run build && node index.js NODE_ENV=production",
     "build": "react-scripts build",
     "back": "node index.js"
   },
