@@ -1,6 +1,9 @@
 import axios from 'axios'
 const baseUrl = '/api/blogs'
-
+let localhost='localhost'
+  if(process.env==='production'){
+    localhost='blogstore.herokuapp.com'
+  }
 const getAll = async() => {
   const request = await axios.get(baseUrl)
   return request.data
@@ -12,8 +15,8 @@ const setHeader = (token) => {
 }
 
 async function save(saveUrl = `/api/blogs`, data = {}) {
-    
-  const response = await fetch( `http://localhost:3001${saveUrl}` , {
+  
+  const response = await fetch( `http://${localhost}:3001${saveUrl}` , {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -28,7 +31,7 @@ async function save(saveUrl = `/api/blogs`, data = {}) {
 }
 async function like(likeUrl = `/api/blogs/like`, data = {}) {
     
-  const response = await fetch( `http://localhost:3001${likeUrl}` , {
+  const response = await fetch( `http://${localhost}:3001${likeUrl}` , {
     method: 'PATCH', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -43,7 +46,7 @@ async function like(likeUrl = `/api/blogs/like`, data = {}) {
 }
 async function delete_(deleteUrl = `/api/blogs/delete`, data = {}) {
     
-  const response = await fetch( `http://localhost:3001${deleteUrl}` , {
+  const response = await fetch( `http://${localhost}:3001${deleteUrl}` , {
     method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -57,7 +60,7 @@ async function delete_(deleteUrl = `/api/blogs/delete`, data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 async function comment(commentUrl = `/api/blogs/comment`, data = {}) {    
-  const response = await fetch( `http://localhost:3001${commentUrl}` , {
+  const response = await fetch( `http://${localhost}:3001${commentUrl}` , {
     method: 'PATCH', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
