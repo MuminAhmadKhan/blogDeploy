@@ -1,9 +1,9 @@
-const PORT = process.env.PORT
+
 
 
 async function login(loginUrl = `/api/login`, data = {}) {
   
-    const response = await fetch( `http://localhost:${PORT}${loginUrl}` , {
+    const response = await fetch( `http://localhost:3000${loginUrl}` , {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
    
       headers: {
