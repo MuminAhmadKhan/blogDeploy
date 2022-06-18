@@ -12,7 +12,7 @@ const loginRouter = require('./controllers/login')
 
 mongoose.connect(MONGODB_URI)
 
-app.use(express.static('build')) 
+
 app.use(middleware.tokenExtractor)
 
 app.use(cors())
@@ -21,7 +21,7 @@ app.use('/api/login', loginRouter)
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users',userRouter)
 app.use(middleware.requestLogger)
-
+app.use(express.static('build')) 
 if (process.env.NODE_ENV === 'test') {
     const testingRouter = require('./controllers/testing')
     app.use('/api/testing', testingRouter)
