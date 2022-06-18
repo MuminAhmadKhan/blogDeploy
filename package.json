@@ -45,6 +45,14 @@
       "react-app/jest"
     ]
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001",
+      "ws": true
+      
+    }
+  },
+  
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

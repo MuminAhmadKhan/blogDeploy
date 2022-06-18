@@ -14,7 +14,7 @@ const setHeader = (token) => {
 
 async function save(saveUrl = `/api/blogs`, data = {}) {
   
-  const response = await fetch( `http://localhost:${PORT}${saveUrl}` , {
+  const response = await fetch( `${saveUrl}` , {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -29,7 +29,7 @@ async function save(saveUrl = `/api/blogs`, data = {}) {
 }
 async function like(likeUrl = `/api/blogs/like`, data = {}) {
     
-  const response = await fetch( `http://localhost:${PORT}${likeUrl}` , {
+  const response = await fetch( `${likeUrl}` , {
     method: 'PATCH', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -44,7 +44,7 @@ async function like(likeUrl = `/api/blogs/like`, data = {}) {
 }
 async function delete_(deleteUrl = `/api/blogs/delete`, data = {}) {
     
-  const response = await fetch( `http://localhost:${PORT}${deleteUrl}` , {
+  const response = await fetch( `${deleteUrl}` , {
     method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
@@ -58,7 +58,7 @@ async function delete_(deleteUrl = `/api/blogs/delete`, data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 async function comment(commentUrl = `/api/blogs/comment`, data = {}) {    
-  const response = await fetch( `http://localhost:${PORT}${commentUrl}` , {
+  const response = await fetch( `${commentUrl}` , {
     method: 'PATCH', // *GET, POST, PUT, DELETE, etc.
     
     headers: new Headers({
