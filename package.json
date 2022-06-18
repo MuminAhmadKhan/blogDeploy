@@ -45,7 +45,7 @@
       "react-app/jest"
     ]
   },
-
+  "proxy": "http://localhost:3001",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -58,6 +58,7 @@
   "jest": {
     "testEnvironment": "node"
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",

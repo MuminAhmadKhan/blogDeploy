@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/user')
-userRouter = require('express').Router()
+const userRouter = require('express').Router()
 userRouter.post('/', async (request, response) => {
     const {name,email,password} = request.body
     const dupUser = await User.findOne({name})
