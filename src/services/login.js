@@ -1,9 +1,9 @@
-let baseurl = 'https://blogstore.herokuapp.com'
+const PORT = 3001 || process.env.PORT
 
 
 async function login(loginUrl = `/api/login`, data = {}) {
   
-    const response = await fetch( `${baseurl}${loginUrl}` , {
+    const response = await fetch( `http://localhost:${PORT}${loginUrl}` , {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
    
       headers: {
