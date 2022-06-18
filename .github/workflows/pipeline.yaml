@@ -18,7 +18,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: npm install 
+        run: npm install  
       
+      - name: build
+        run: npm run build
+      
+
       - name: depolyment    
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
 
