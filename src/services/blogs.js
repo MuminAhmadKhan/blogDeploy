@@ -1,7 +1,7 @@
 import axios from 'axios'
 const baseUrl = '/api/blogs'
 let localhost='localhost'
-  if(process.env==='production'){
+  if(process.env.NODE_ENV==='production'){
     localhost='blogstore.herokuapp.com'
   }
 const getAll = async() => {

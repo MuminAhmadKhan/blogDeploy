@@ -1,8 +1,11 @@
 
 
 async function login(loginUrl = `/api/login`, data = {}) {
-    
-    const response = await fetch( `http://localhost:3001${loginUrl}` , {
+  let localhost='localhost'
+  if(process.env.NODE_ENV==='production'){
+    localhost='blogstore.herokuapp.com'
+  }    
+    const response = await fetch( `http://${localhost}:3001${loginUrl}` , {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
    
       headers: {
