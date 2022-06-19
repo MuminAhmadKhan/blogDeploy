@@ -9,7 +9,7 @@ const blogsRouter = require('./controllers/blogs')
 const userRouter  = require('./controllers/users')
 const  middleware = require('./utils/middelware')
 const loginRouter = require('./controllers/login')
-
+const path = require('path')
 mongoose.connect(MONGODB_URI)
 
 
@@ -26,7 +26,9 @@ if (process.env.NODE_ENV === 'test') {
     const testingRouter = require('./controllers/testing')
     app.use('/api/testing', testingRouter)
   }
-
+app.get('*',async(req,res)=>{
+  res.sendFile(path.join(__dirname,'build','index.html'))
+})
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
