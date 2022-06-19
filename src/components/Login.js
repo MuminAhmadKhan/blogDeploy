@@ -1,7 +1,6 @@
 import {React,useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Alert from '../components/Alert'
-import Blog from '../components/Blog'
 import BlogForm from '../components/BlogForm'
 import { createrAlert } from '../Reducers/alertReducer'
 import { initialBlogs, initializeBlogs } from '../Reducers/blogReducer'
@@ -28,6 +27,7 @@ const Login = () => {
          // console.log(loggedUser,user)
           blogService.setHeader(user.token)
         }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
     
       useEffect( () => {
@@ -36,6 +36,7 @@ const Login = () => {
         if (user.name){
           console.log(user.name)
           initialize()}
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [user])
       const blogs = useSelector(state=>state.blog)
       console.log(blogs)
@@ -57,6 +58,7 @@ const Login = () => {
         }
         else 
           setUser()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [user] )
       
       const setUser = ()=>{
@@ -73,6 +75,7 @@ const Login = () => {
         setPassword('')
         setTimeout(()=>dispatch(createrAlert(null)),5000)
       }}
+      // eslint-disable-next-line no-unused-vars
       const handleLogout = async ()=>{
         dispatch(login(""))
         dispatch(initializeBlogs([]))
