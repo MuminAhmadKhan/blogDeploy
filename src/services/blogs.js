@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 const baseUrl = '/api/blogs'
 
 const getAll = async() => {
@@ -13,7 +12,7 @@ const setHeader = (token) => {
 }
 
 async function save(saveUrl = `/api/blogs`, data = {}) {
-  
+    
   const response = await fetch( `${saveUrl}` , {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     
@@ -75,4 +74,4 @@ async function comment(commentUrl = `/api/blogs/comment`, data = {}) {
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default  { getAll  , setHeader , save , like , delete_,comment}
+export default { getAll  , setHeader , save , like , delete_,comment}

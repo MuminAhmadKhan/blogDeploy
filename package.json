@@ -13,7 +13,8 @@
     "start": "node index.js NODE_ENV=production",
     "start-prod": "node index.js NODE_ENV=production",
     "build": "react-scripts build",
-    "back": "node index.js"
+    "back": "node index.js",
+    "begin":"react-scripts start"
   },
   "author": "",
   "license": "ISC",

@@ -1,10 +1,10 @@
 import {React,useState,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Alert from '../components/Alert'
-
+import Blog from '../components/Blog'
 import BlogForm from '../components/BlogForm'
 import { createrAlert } from '../Reducers/alertReducer'
-import { initialBlogs } from '../Reducers/blogReducer'
+import { initialBlogs, initializeBlogs } from '../Reducers/blogReducer'
 import { login, signIn } from '../Reducers/userReducer'
 import blogService from '../services/blogs'
 import { Link } from 'react-router-dom'
@@ -28,7 +28,7 @@ const Login = () => {
          // console.log(loggedUser,user)
           blogService.setHeader(user.token)
         }
-      }, )
+      }, [])
     
       useEffect( () => {
     
@@ -36,7 +36,6 @@ const Login = () => {
         if (user.name){
           console.log(user.name)
           initialize()}
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [user])
       const blogs = useSelector(state=>state.blog)
       console.log(blogs)
@@ -58,8 +57,7 @@ const Login = () => {
         }
         else 
           setUser()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [ user] )
+      }, [user] )
       
       const setUser = ()=>{
         
@@ -75,6 +73,14 @@ const Login = () => {
         setPassword('')
         setTimeout(()=>dispatch(createrAlert(null)),5000)
       }}
+      const handleLogout = async ()=>{
+        dispatch(login(""))
+        dispatch(initializeBlogs([]))
+        
+        localStorage.removeItem('loggedinUser')
+        //setUser('')
+       
+      } 
       const handleVisibility = ()=>{
         setBlogVisible(!blogVisible)
       }

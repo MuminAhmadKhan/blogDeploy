@@ -1,8 +1,7 @@
 
 
-
 async function login(loginUrl = `/api/login`, data = {}) {
-  
+    
     const response = await fetch( `${loginUrl}` , {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
    

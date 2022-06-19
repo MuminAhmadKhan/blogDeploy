@@ -2,10 +2,11 @@ import React from 'react'
 import Login from './components/Login'
 import {
   BrowserRouter as Router,
-  Routes, Route
+  Routes, Route, Link
 } from "react-router-dom"
 import Users from './components/Users'
 import User from './components/User'
+import Blog from './components/Blog'
 import BlogView from './components/BlogView'
 import Navbar from './components/Navbar'
 
